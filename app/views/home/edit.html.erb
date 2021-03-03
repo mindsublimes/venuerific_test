@@ -1,0 +1,23 @@
+<div class="container mt-5 pt-5">
+  <h3 class="text-center">Edit Blog Post</h3>
+  <div class="col-sm-9 m-auto">
+    <%= form_for @post, url: home_path do |f| %>
+      <div class="col-sm-9 m-auto">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <div class="col-sm-9 m-auto">
+        <%= f.label :author %>
+        <%= f.text_field :author, class: 'form-control' %>
+      </div>
+      <div class="col-sm-9 m-auto">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+      <div class="col-sm-9 m-auto">
+        <%= f.submit class: 'btn btn-primary mt-2 pull-right' %>
+        <%= link_to 'back', root_path, class: 'btn btn-secondary mt-2' %>
+      </div>
+    <% end %>
+  </div>
+</div>

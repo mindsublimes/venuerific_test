@@ -1,0 +1,18 @@
+<%= form_for [:admin, @post] do |f| %>
+  <div class="col-sm-6 m-auto">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="col-sm-6 m-auto">
+    <%= f.label :author %>
+    <%= f.text_field :author, class: 'form-control' %>
+  </div>
+  <div class="col-sm-6 m-auto">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+  <div class="col-sm-6 m-auto">
+    <%= f.submit class: 'btn btn-primary mt-2 pull-right' %>
+    <%= link_to 'back', admin_posts_path, class: 'btn btn-secondary mt-2' %>
+  </div>
+<% end %>

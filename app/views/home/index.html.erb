@@ -1,0 +1,29 @@
+<header class="masthead">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>All Blog Posts</h1>
+          <!-- <span class="subheading">A Blog Theme by Start Bootstrap</span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <% @posts.each do |post| %>
+    <div class="col-sm-8 m-auto">
+      <div class="post-preview">
+        <h2 class="post-title">
+          <%= link_to "#{post.title}", edit_home_path(post) %>
+        </h2>
+        <p class="post-meta">Posted by
+          <a href="#"><%= post.author %></a>
+          on <%= post.created_at.strftime("%d %B %Y") %></p>
+        <p><%= post.description %></p>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+</div>

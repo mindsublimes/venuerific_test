@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* ruby version '2.4.2'
 
-Things you may want to cover:
+* rails version '5.2.4.5'
 
-* Ruby version
+* run bundle install to install the project
 
-* System dependencies
+* create and migrate database and also run seed 
+  copy the below command and run in terminal
 
-* Configuration
+  rails db:create db:migrate db:seed
 
-* Database creation
+* run the server by rails server command
 
-* Database initialization
+* go to http://localhost:3000/ on your browser
 
-* How to run the test suite
+* for admin user login with email: admin@gmail.com, password: 123456
 
-* Services (job queues, cache servers, search engines, etc.)
+* for normal user login with email: user@gmail.com, password: 123456
 
-* Deployment instructions
+* sign up from browser user will be default as normal user
 
-* ...
+* admin can create a post by clicking on create new post button also can edit, delete or view the posts
+
+* admin user can logout by clicking on top right user icon and then click logout
+
+* normal user can only view,create and edit the posts
+
+* normal user can edit the post by clicking on post title, can create new post by clicking on create post button that is on the top right corner of navbar
+
+* normal user can logout by clicking on logout button that is opposite to create post button 

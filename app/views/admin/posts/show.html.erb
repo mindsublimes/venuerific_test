@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <tr>
+      <th>Author</th>
+      <td><%= @post.author %></td>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <td><%= @post.title %></td>
+    </tr>
+    <tr>
+      <th>Created At</th>
+      <td><%= @post.created_at.strftime("%Y-%m-%d") %></td>
+    </tr>
+  </table>
+  <h5><b>Description</b></h5>
+  <p><%= @post.description %></p>
+  <%= link_to 'back', admin_posts_path, class: 'btn btn-primary btn-sm float-right mr-2' %>
+</div>

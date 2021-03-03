@@ -1,0 +1,32 @@
+name: CI/CD
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu
+    
+    services:
+      db:
+        image: postgres:11
+        ports: ["3000:3000"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.4.2
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+        run: |
+          sudo apt-get -yqq install libpq-dev
+          gem install bundler
+          bundle install
+          yarn add bootstrap jquery popper.js
+          bundle exec rake db:create
+          bundle exec rake db:migrate
+          bundle exec rake db:seed
